@@ -2,7 +2,7 @@ from random import choice
 
 class RandomWalk():
     """Uma classe que gera passeios aleatórios"""
-    def __init__(self, num_points=100000):
+    def __init__(self, num_points=5000):
         """Método que inicializa os atributos do passeio"""
         self.num_points = num_points
         """Todos os passeios começam em (0, 0)"""

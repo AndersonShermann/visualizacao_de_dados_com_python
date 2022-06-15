@@ -1,24 +1,21 @@
 import matplotlib.pyplot as plt
-
 from random_walk import RandomWalk
 
 while True:
     #Cria um passeio aleatório e plota os pontos
-    rw = RandomWalk()
+    rw = RandomWalk(100000)
     rw.fill_walk()
 
-    plt.scatter(rw.x_value, rw.y_value, edgecolors='None', c=rw.y_value, cmap=plt.cm.Reds, s=5)
+    num_points = list(range(rw.num_points))
+    plt.scatter(rw.x_value, rw.y_value, edgecolors='None', c=num_points, cmap=plt.cm.Blues, s=1)
 
-    #Define o titulo e nome dos eixos
-    plt.title('Geração e Plotagem de Valores Aleatórios', fontsize=15)
-    plt.xlabel('X Value', fontsize=10)
-    plt.ylabel('Y Value', fontsize=10)
+    #Enfatiza o primeiro e ultimo ponto do percurso
+    plt.scatter(0, 0, c='red', edgecolors='None', s=50)
+    plt.scatter(rw.x_value[-1], rw.y_value[-1], c='red', edgecolors='None', s=50)
 
-    #Personaliza os dados dos eixos
-    plt.tick_params(axis='both', labelsize=10)
-
-    #Define os limites mínimo e máximo dos eixos
-    plt.axis([-900, 900, -900, 900])
+    #Remove os eixosy
+    plt.gca().get_xaxis().set_visible(False)
+    plt.gca().get_yaxis().set_visible(False)
 
     # plt.savefig('random_walk.png', bbox_inches='tight')
     plt.show()
