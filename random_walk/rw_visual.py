@@ -13,11 +13,11 @@ while True:
     plt.scatter(0, 0, c='red', edgecolors='None', s=50)
     plt.scatter(rw.x_value[-1], rw.y_value[-1], c='red', edgecolors='None', s=50)
 
-    #Remove os eixosy
+    #Remove os eixos
     plt.gca().get_xaxis().set_visible(False)
     plt.gca().get_yaxis().set_visible(False)
 
-    # plt.savefig('random_walk.png', bbox_inches='tight')
+    #plt.savefig('random_walk.png', bbox_inches='tight')
     plt.show()
 
     keep_running = input('Gerar outro caminho?(y/n): ')

@@ -15,12 +15,12 @@ class RandomWalk():
         #Laço para contar self.num_points
         while len(self.x_value) < self.num_points:
             #Define nova direção a ser seguida e a distancia a ser percorrida
-            x_direction = choice([1, -1])
-            x_distance = choice([0, 1, 2, 3, 4])
+            x_direction = choice([-3, 3])
+            x_distance = choice([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12])
             x_step = x_direction * x_distance
 
-            y_direction = choice([1, -1])
-            y_distance = choice([0, 1, 2, 3, 4])
+            y_direction = choice([-3, 3])
+            y_distance = choice([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12])
             y_step = y_direction * y_distance
 
             #Rejeita movimentos que não vão a lugar nenhum
@@ -33,10 +33,3 @@ class RandomWalk():
 
             self.x_value.append(next_x)
             self.y_value.append(next_y)
-
-
-        
-
-
-
-    
